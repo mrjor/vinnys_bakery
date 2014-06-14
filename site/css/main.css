@@ -1,0 +1,331 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body{ font:13px/1.5em 'claire_handbold', arial; background-color: #bf1e2e; }
+.container{width:1000px; margin:0 auto; position: relative;}
+.website-wrapper{margin:5px 0; background:url(../img/dots.png) top left repeat-x, url(../img/dots.png) bottom left repeat-x; background-color: #fff}
+.hide{display: none;}
+
+header{padding:55px 0 20px 0;}
+.logo{margin:0 auto 50px auto; display: block; width:319px;}
+.header-vis{padding:20px 0; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x;}
+.header-shadow-main{background:url(../img/header-shadow.png) no-repeat top center; width:100%; height:26px;}
+
+.social{position:absolute; top: 20px; right:0;}
+.social a{margin: 0 0 0 5px; background:#bf1e2e; font-size:1.3em; width:25px; line-height: 25px; border-radius: 20px; text-align: center; color:#fff; text-decoration: none; display: inline-block;}
+.social a:hover{background-color: #fff; color: #bf1e2e}
+
+.col{width:100%; clear: both;}
+.col-2{width:50%; float:left; box-sizing:border-box; padding-right:50px;}
+.clear{clear:both;}
+
+.highlights{margin:-20px 0 0 0;}
+.highlights .left{float:left;}
+.highlights .middle{position:absolute; top: -15px; left: 317px;}
+.highlights .right{float:right;}
+
+.highlights-footer{margin:50px 0 0 0; padding:20px 0; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x;}
+.highlights-footer .middle{margin:0 22px;}
+
+.reclames-page .header-vis{padding:20px 0 10px 0; background:url(../img/dots.png) top left repeat-x;}
+.img-container{margin-top:-20px; background:url(../img/dots.png) bottom left repeat-x; padding-bottom:20px;}
+.img-container img{display: inline-block; margin-right:5px;}
+.img-container img:last-child{margin-right:0px;}
+
+footer{padding:15px 0;}
+footer ul{padding:0; margin:0; text-align: center; width:100%;}
+footer ul li{display: inline-block; margin: 0 15px}
+footer ul li a{text-decoration: none; color:#000;}
+footer ul li a:hover{color:#bf1e2e;}
+
+
+
+/* ==========================================================================
+   main menu
+   ========================================================================== */
+.menu{width:100%; text-align: center;}
+.menu li{display: inline-block; margin:0 15px;}
+.menu ul{padding:0;}
+
+.menu a{ background: url('../img/menu.png') no-repeat top left; display: block; overflow: hidden; text-indent: -999em } 
+.menu a.bezorgservice:hover, .menu .active a.bezorgservice  { background-position: 0px 0px; width: 117px; height: 21px;  } 
+.menu a.bezorgservice { background-position: 0px -31px; width: 117px; height: 21px;  } 
+.menu a.assortiment:hover,.menu .active a.assortiment { background-position: 0px -62px; width: 105px; height: 21px;  } 
+.menu a.assortiment { background-position: 0px -93px; width: 105px; height: 21px;  } 
+.menu a.contact:hover,.menu .active a.contact { background-position: 0px -124px; width: 66px; height: 21px;  } 
+.menu a.contact { background-position: 0px -155px; width: 66px; height: 21px;  } 
+.menu a.home:hover, .menu .active a.home { background-position: 0px -186px; width: 109px; height: 21px;  } 
+.menu a.home { background-position: 0px -217px; width: 109px; height: 21px;  } 
+.menu a.info:hover, .menu .active a.info  { background-position: 0px -248px; width: 98px; height: 21px;  } 
+.menu a.info { background-position: 0px -279px; width: 98px; height: 21px;  } 
+.menu a.reclames:hover, .menu .active a.reclames  { background-position: 0px -310px; width: 78px; height: 21px;  } 
+.menu a.reclames { background-position: 0px -341px; width: 78px; height: 21px;  } 
+.menu a.taart-op-maat:hover, .menu .active a.taart-op-maat { background-position: 0px -372px; width: 103px; height: 21px;  } 
+.menu a.taart-op-maat { background-position: 0px -403px; width: 103px; height: 21px;  } 
+
+
+
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+
+@font-face {
+    font-family: 'claire_handbold';
+    src: url('fonts/clairehandbold-webfont.eot');
+    src: url('fonts/clairehandbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/clairehandbold-webfont.woff') format('woff'),
+         url('fonts/clairehandbold-webfont.ttf') format('truetype'),
+         url('fonts/clairehandbold-webfont.svg#claire_handbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'claire_handlight';
+    src: url('fonts/clairehandlight-webfont.eot');
+    src: url('fonts/clairehandlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/clairehandlight-webfont.woff') format('woff'),
+         url('fonts/clairehandlight-webfont.ttf') format('truetype'),
+         url('fonts/clairehandlight-webfont.svg#claire_handlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'claire_handregular';
+    src: url('fonts/clairehandregular-webfont.eot');
+    src: url('fonts/clairehandregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/clairehandregular-webfont.woff') format('woff'),
+         url('fonts/clairehandregular-webfont.ttf') format('truetype'),
+         url('fonts/clairehandregular-webfont.svg#claire_handregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?-x6w48j');
+    src:url('fonts/icomoon.eot?#iefix-x6w48j') format('embedded-opentype'),
+        url('fonts/icomoon.woff?-x6w48j') format('woff'),
+        url('fonts/icomoon.ttf?-x6w48j') format('truetype'),
+        url('fonts/icomoon.svg?-x6w48j#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+    content: "\e600";
+}
+.icon-facebook:before {
+    content: "\e601";
+}
+.icon-linkedin:before {
+    content: "\e602";
+}
+
+/* ==========================================================================
+   Rest
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
