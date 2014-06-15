@@ -58,10 +58,15 @@ body{ font:13px/1.5em 'claire_handbold', arial; background-color: #bf1e2e; }
 .container{width:1000px; margin:0 auto; position: relative;}
 .website-wrapper{margin:5px 0; background:url(../img/dots.png) top left repeat-x, url(../img/dots.png) bottom left repeat-x; background-color: #fff}
 .hide{display: none;}
+div{position:relative;}
 
-header{padding:55px 0 20px 0;}
+p{margin:0 0 1em 0;}
+h2{margin:0 0 0.8em 0; font-weight: normal}
+
+
+header{padding:55px 0 0px 0;}
 .logo{margin:0 auto 50px auto; display: block; width:319px;}
-.header-vis{padding:20px 0; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x;}
+.header-vis{padding:0 0 20px 0; margin:0 0 20px 0; background:url(../img/dots.png) bottom left repeat-x;}
 .header-shadow-main{background:url(../img/header-shadow.png) no-repeat top center; width:100%; height:26px;}
 
 .social{position:absolute; top: 20px; right:0;}
@@ -73,17 +78,42 @@ header{padding:55px 0 20px 0;}
 .clear{clear:both;}
 
 .highlights{margin:-20px 0 0 0;}
-.highlights .left{float:left;}
+.highlights .left, .highlights .right{background:url(../img/highlight-shadow.png) repeat-x bottom left; padding:0 0 11px 0;}
+.highlights .left{float:left; }
 .highlights .middle{position:absolute; top: -15px; left: 317px;}
 .highlights .right{float:right;}
 
-.highlights-footer{margin:50px 0 0 0; padding:20px 0; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x;}
+.highlights-footer{margin:35px 0 0 0; padding:20px 0; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x;}
 .highlights-footer .middle{margin:0 22px;}
 
-.reclames-page .header-vis{padding:20px 0 10px 0; background:url(../img/dots.png) top left repeat-x;}
+.reclames-page .header-vis{padding:0 0 10px 0; background:none;}
 .img-container{margin-top:-20px; background:url(../img/dots.png) bottom left repeat-x; padding-bottom:20px;}
 .img-container img{display: inline-block; margin-right:5px;}
 .img-container img:last-child{margin-right:0px;}
+
+.product-info .item{background-image:url(../img/info-bg.png); text-align: center; padding:30px 0 20px 0;}
+.product-info .arrow{-webkit-transition: right 0.2s ease-out; transition: right 0.2s ease-out; display: block; visibility:hidden;  background: url(../img/info-arrow.png) no-repeat top left; width:17px; height:26px; position:absolute; top:3px; right:-25px;}
+.product-info .item .info{-webkit-transition: height 0.2s ease-out; transition: height 0.2s ease-out; background:url(../img/info-dots.png) no-repeat top center; overflow: hidden;  box-sizing:border-box; padding:0 30px 0 30px;}
+.product-info .item h2 .title{position:relative;]}
+.product-info .item .info .padding{margin:2em 0 1em 0;}
+.product-info .item .info .hr{width:100%; background:url(../img/info-hr.png) no-repeat top center; height:3px; margin-bottom:1em;}
+.product-info .item .list{text-align: left; width:350px; margin:0 auto;}
+.product-info .item .list .col-2{padding:0;}
+.item.yellow{background-color: #ffe95f}
+.item.orange{background-color: #ed9637}
+.item.blue{background-color: #3edde2}
+.item.green{background-color: #5cdf91}
+.copy-container{width:777px; margin:0 auto; box-sizing:border-box; padding:0 30px;}
+.info-close{position: absolute; top: 20px;right: 20px; cursor: pointer; -webkit-transform:scale(1); -webkit-transition: -webkit-transform 0.2s ease-out; transition: transform 0.2s ease-out;}
+.info-close:hover{-webkit-transform:scale(1.2);}
+
+.product-info .item.closed{cursor:pointer;}
+.product-info .item.closed .info-close{visibility: hidden}
+.product-info .item.closed .info{height:0;}
+.product-info .item.closed .arrow{visibility:visible; }
+.product-info .item.closed:hover .arrow{right:-40px;}
+
+
 
 footer{padding:15px 0;}
 footer ul{padding:0; margin:0; text-align: center; width:100%;}
@@ -96,9 +126,9 @@ footer ul li a:hover{color:#bf1e2e;}
 /* ==========================================================================
    main menu
    ========================================================================== */
-.menu{width:100%; text-align: center;}
+.menu{width:100%; text-align: center; background:url(../img/dots.png) bottom left repeat-x; padding:0 0 15px 0; margin:0 0 20px 0;}
 .menu li{display: inline-block; margin:0 15px;}
-.menu ul{padding:0;}
+.menu ul{padding:0; margin:0;}
 
 .menu a{ background: url('../img/menu.png') no-repeat top left; display: block; overflow: hidden; text-indent: -999em } 
 .menu a.bezorgservice:hover, .menu .active a.bezorgservice  { background-position: 0px 0px; width: 117px; height: 21px;  } 
