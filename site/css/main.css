@@ -73,7 +73,7 @@ header{padding:55px 0 0px 0;}
 .social a:hover{background-color: #fff; color: #bf1e2e}
 
 .col{width:100%; clear: both;}
-.col-2{width:50%; float:left; box-sizing:border-box; padding-right:50px;}
+.col-2{width:50%; float:left;   -moz-box-sizing: border-box; box-sizing:border-box; padding-right:50px;}
 .clear{clear:both;}
 
 .highlights{margin:-20px 0 0 0;}
@@ -92,7 +92,7 @@ header{padding:55px 0 0px 0;}
 
 .product-info .item{background-image:url(../img/info-bg.png); text-align: center; padding:30px 0 20px 0;}
 .product-info .arrow{-webkit-transition: right 0.2s ease-out; transition: right 0.2s ease-out; display: block; visibility:hidden;  background: url(../img/info-arrow.png) no-repeat top left; width:17px; height:26px; position:absolute; top:3px; right:-25px;}
-.product-info .item .info{-webkit-transition: height 0.2s ease-out; transition: height 0.2s ease-out; background:url(../img/info-dots.png) no-repeat top center; overflow: hidden;  box-sizing:border-box; padding:0 30px 0 30px;}
+.product-info .item .info{-webkit-transition: height 0.2s ease-out; transition: height 0.2s ease-out; background:url(../img/info-dots.png) no-repeat top center; overflow: hidden;   -moz-box-sizing: border-box;  box-sizing:border-box; padding:0 30px 0 30px;}
 .product-info .item h2 .title{position:relative;]}
 .product-info .item .info .padding{margin:2em 0 1em 0;}
 .product-info .item .info .hr{width:100%; background:url(../img/info-hr.png) no-repeat top center; height:3px; margin-bottom:1em;}
@@ -103,7 +103,7 @@ header{padding:55px 0 0px 0;}
 .blue{background-color: #3edde2}
 .green{background-color: #5cdf91}
 .red{background-color: #e3313b}
-.copy-container{width:777px; margin:0 auto; box-sizing:border-box; padding:0 30px;}
+.copy-container{width:777px; margin:0 auto;   -moz-box-sizing: border-box; box-sizing:border-box; padding:0 30px;}
 .info-close, .popup-close{z-index:2;position: absolute; top: 20px;right: 20px; cursor: pointer; -webkit-transform:scale(1); -webkit-transition: -webkit-transform 0.2s ease-out; transition: transform 0.2s ease-out;}
 .info-close:hover, .popup-close:hover{-webkit-transform:scale(1.2);}
 
