@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           options: {
             //keepalive:true,
             //livereload : true,
-            hostname: 'localhost',
+            hostname : '*',
             open: true,
             port: 9001,
             base: './site/'
