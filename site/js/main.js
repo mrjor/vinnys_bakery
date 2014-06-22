@@ -16,3 +16,20 @@ $('.info-close').on('click',function(e){
 	$(this).parent().addClass('closed');
 	$(this).parent().find('.info').height(0)
 });
+
+
+$('.product-item').on('click',function(e){
+	e.preventDefault();
+	var content = $(this).find('.popup-content').html();
+
+	$('.popup-overlay').find('.content-container').html(content);
+	$('.popup-overlay').fadeIn();
+
+
+});
+
+$('.popup-close, .popup-overlay').on('click', function(e){
+	e.stopPropagation();
+	$('.popup-overlay').fadeOut();
+})
+

@@ -104,8 +104,8 @@ header{padding:55px 0 0px 0;}
 .green{background-color: #5cdf91}
 .red{background-color: #e3313b}
 .copy-container{width:777px; margin:0 auto; box-sizing:border-box; padding:0 30px;}
-.info-close{position: absolute; top: 20px;right: 20px; cursor: pointer; -webkit-transform:scale(1); -webkit-transition: -webkit-transform 0.2s ease-out; transition: transform 0.2s ease-out;}
-.info-close:hover{-webkit-transform:scale(1.2);}
+.info-close, .popup-close{z-index:2;position: absolute; top: 20px;right: 20px; cursor: pointer; -webkit-transform:scale(1); -webkit-transition: -webkit-transform 0.2s ease-out; transition: transform 0.2s ease-out;}
+.info-close:hover, .popup-close:hover{-webkit-transform:scale(1.2);}
 
 .product-info .item.closed{cursor:pointer;}
 .product-info .item.closed .info-close{visibility: hidden}
@@ -114,13 +114,38 @@ header{padding:55px 0 0px 0;}
 .product-info .item.closed:hover .arrow{right:-40px;}
 
 .assortiment-container{margin:0 0 20px 0; padding:0; list-style: none;  background:url(../img/dots.png) bottom left repeat-x; height:269px;}
-.assortiment-container li{float:left; display: table; text-align: center; width:197px; margin-left:3px; height:268px; background-image: url(../img/info-bg.png);}
-.assortiment-container li a{display: table-cell; width:100%; height: 100%; vertical-align: bottom;}
+.assortiment-container li{-webkit-transition: all 0.2s ease-out;
+-o-transition: all 0.2s ease-out;
+transition: all 0.2s ease-out;float:left; position: relative; top:0; display: table; text-align: center; width:197px; margin-left:3px; height:268px; background-image: url(../img/info-bg.png);}
+.assortiment-container li a{ display: table-cell; width:100%; height: 100%; vertical-align: bottom;}
+.assortiment-container li:hover{top:-10px;}
 .assortiment-container li a img{margin-bottom:35px;}
 .assortiment-container li.last img{margin-bottom: 13px;}
 .assortiment-container li.first{margin-left:0;}
 .assortiment-container li.last{width:200px;}
-.title-assortiment{width:398px; height:27px; display: block; background:url(../img/ass-kies.png) no-repeat top left; position: absolute; top:15px; left:295px; margin:0;}
+.assortiment-container .deactive{opacity:0.5;}
+.assortiment-container .deactive:hover{opacity: 1}
+.title-assortiment{z-index:1; width:398px; height:27px; display: block; background:url(../img/ass-kies.png) no-repeat top left; position: absolute; top:15px; left:295px; margin:0;}
+
+.producten-container{background:url(../img/dots.png) top left repeat-x; width:100%;}
+.product-item{text-decoration:none; color:#000; position:relative;height:200px; display: block; float: left; width:25%; text-align: center; background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) left bottom repeat-x}
+.product-item .zoom{display:none; position: absolute; top: 10px; right: 10px;}
+.product-item:hover .zoom{display:block;}
+.product-item .product-image{display: block; position: absolute; top: 0;left: 0;background-position:center center; background-repeat: no-repeat; width:100%; height: 100%;}
+.product-item h2{-webkit-transition: all 0.2s ease-out;
+-o-transition: all 0.2s ease-out;
+transition: all 0.2s ease-out;font-size:1.2em; position:absolute; left: 0; bottom: 10px; margin: 0; text-align: center; width:100%;}
+.product-item.last{background:url(../img/dots.png) bottom left repeat-x;}
+.product-item .popup-content{display:none;}
+.product-item:hover h2{bottom:0px; background:rgba(0,0,0,0.3); color:#fff; padding:10px 0;}
+
+.popup-overlay{display:none; position:fixed; top: 0;left: 0; width:100%; height: 100%; z-index: 10}
+.popup-container{box-shadow:0 0 40px rgba(0,0,0,0.5); background:#e4ebf1 url(../img/info-bg.png); width:550px; height: 550px; margin:80px auto 0 auto;}
+.popup-container .content-container{display: table; height: 100%; width: 100%;}
+.popup-container .content-container .product-big-image{width: 100%; height: 100%; display: table-cell; text-align: center; vertical-align: middle}
+.popup-container .content-container .popup-text{position:absolute; text-align: center; bottom: 15px; left: 0; width: 100%;}
+.popup-container .content-container .popup-text h2{margin:0;}
+.popup-container .content-container .popup-text p{margin:0;}
 
 .extra-container{height:97px;margin:0; padding: 0; list-style: none; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x; }
 .extra-container li{float:left; width:25%; height:100%; text-align: center; display: table; background:url(../img/dots-v.png) top right repeat-y }
