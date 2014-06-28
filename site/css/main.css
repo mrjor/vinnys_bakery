@@ -160,7 +160,7 @@ footer ul li a{text-decoration: none; color:#000;}
 footer ul li a:hover{color:#bf1e2e;}
 
 /*IE FIX*/
-.lt-ie9 .product-item{-pie-background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) bottom left repeat-x; behavior: url(css/PIE.htc)};
+.lt-ie9 .product-item{-pie-background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) bottom left repeat-x; behavior: url(css/PIE.htc)}
 
 
 
