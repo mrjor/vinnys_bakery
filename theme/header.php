@@ -82,25 +82,25 @@
 
 						wp_nav_menu( $args );
 					?>
-                   <!--  <ul>
-                        <li><a class="home" href="/">vinny's bakery</a></li>
-                        <li><a class="info" href="product-info.html">product info</a></li>
-                        <li><a class="assortiment"href="assortiment.html">assortiment</a></li>
-                        <li class="active"><a class="bezorgservice" href="bezorgservice.html">bezorgservice</a></li>
-                        <li><a class="reclames" href="reclames.html">reclames</a></li>
-                        <li><a class="taart-op-maat" href="taart-op-maat.html">taartopmaat</a></li>
-                        <li><a class="contact" href="contact.html">contact</a></li>
-                    </ul> -->
                 </nav>
 
                  <div class="social">
                     blijf op de hoogte <a href="#" class="icon-facebook"></a>
                 </div>
+
+              
+                	    
+			    
+               <?php if (have_posts()) : ?>
+			   <?php while (have_posts()) : the_post(); ?>    
                 
                 <div class="header-vis">
-                    <h1 class="hide">vinny's delivery</h1>
-                    <img src="img/header-contact.jpg" alt="">
+                    <h1 class="hide"><?php the_title(); ?></h1>
+                    <img src="<?= get_field('header_image'); ?>" alt="">
                 </div>
+
+                 <?php endwhile; ?>
+			     <?php endif; ?>
         </header>
 <!-- HEADER -->
 <!-- CONTENT -->

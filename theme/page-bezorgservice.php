@@ -1,11 +1,8 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Adamantium - Starter Kit
- * @author Alan Gabriel Dawidowicz - www.alandawi.com.ar
- */
-?>
-
+ * Template Name: bezorgservice
+*/
+ ?>
 <?php get_header(); ?>
 
      
@@ -27,6 +24,11 @@
     </div>
 
     <?php endif; ?>
+
+     <div class="col">
+        <div class="col-2"><a href="mailto:info@vinnybakery.nl"><img src="<?php bloginfo('template_url'); ?>/img/email.png" alt=""></a></div>
+        <div class="col-2"><img src="<?php bloginfo('template_url'); ?>/img/phone.png" alt=""></div>
+    </div>
             
     <div class="clear"></div>
 

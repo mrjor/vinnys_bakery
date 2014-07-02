@@ -172,19 +172,19 @@ footer ul li a:hover{color:#bf1e2e;}
 .menu ul{padding:0; margin:0;}
 
 .menu a{ background: url('../img/menu.png') no-repeat top left; display: block; overflow: hidden; text-indent: -999em } 
-.menu .bezorgservice a:hover, .menu .active a.bezorgservice  { background-position: 0px 0px; width: 117px; height: 21px;  } 
+.menu .bezorgservice a:hover, .menu .current_page_item.bezorgservice a  { background-position: 0px 0px; width: 117px; height: 21px;  } 
 .menu .bezorgservice a { background-position: 0px -31px; width: 117px; height: 21px;  } 
-.menu .assortiment a:hover,.menu .active a.assortiment { background-position: 0px -62px; width: 105px; height: 21px;  } 
+.menu .assortiment a:hover,.menu .current_page_item.assortiment a { background-position: 0px -62px; width: 105px; height: 21px;  } 
 .menu .assortiment a { background-position: 0px -93px; width: 105px; height: 21px;  } 
-.menu .contact a:hover,.menu .active a.contact { background-position: 0px -124px; width: 66px; height: 21px;  } 
+.menu .contact a:hover,.menu .current_page_item.contact a { background-position: 0px -124px; width: 66px; height: 21px;  } 
 .menu .contact a { background-position: 0px -155px; width: 66px; height: 21px;  } 
-.menu .home a:hover, .menu .active a.home { background-position: 0px -186px; width: 109px; height: 21px;  } 
+.menu .home a:hover, .menu .current_page_item.home a { background-position: 0px -186px; width: 109px; height: 21px;  } 
 .menu .home a { background-position: 0px -217px; width: 109px; height: 21px;  } 
-.menu .info a:hover, .menu .active a.info  { background-position: 0px -248px; width: 98px; height: 21px;  } 
+.menu .info a:hover, .menu .current_page_item.info a  { background-position: 0px -248px; width: 98px; height: 21px;  } 
 .menu .info a { background-position: 0px -279px; width: 98px; height: 21px;  } 
-.menu .reclames a:hover, .menu .active a.reclames  { background-position: 0px -310px; width: 78px; height: 21px;  } 
+.menu .reclames a:hover, .menu .current_page_item.reclames a  { background-position: 0px -310px; width: 78px; height: 21px;  } 
 .menu .reclames a{ background-position: 0px -341px; width: 78px; height: 21px;  } 
-.menu .taart-op-maat a:hover, .menu .active a.taart-op-maat { background-position: 0px -372px; width: 103px; height: 21px;  } 
+.menu .taart-op-maat a:hover, .menu .current_page_item.taart-op-maat a { background-position: 0px -372px; width: 103px; height: 21px;  } 
 .menu .taart-op-maat a{ background-position: 0px -403px; width: 103px; height: 21px;  } 
 
 
