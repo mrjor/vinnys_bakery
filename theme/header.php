@@ -97,6 +97,9 @@
                 <div class="header-vis">
                     <h1 class="hide"><?php the_title(); ?></h1>
                     <img src="<?= get_field('header_image'); ?>" alt="">
+                    <?php if(is_page_template ( 'page-home.php' )): ?>
+						<div class="header-shadow-main"></div>
+                	<?php endif; ?>
                 </div>
 
                  <?php endwhile; ?>
