@@ -81,6 +81,8 @@
 						);
 
 						wp_nav_menu( $args );
+
+						
 					?>
                 </nav>
 
@@ -94,6 +96,8 @@
                <?php if (have_posts()) : ?>
 			   <?php while (have_posts()) : the_post(); ?>    
                 
+               <?php if(!is_page_template ( 'page-assortiment-overzicht.php' ) && !is_page_template ( 'page-product-info.php' ) && !is_page_template ( 'page-product-info.php' ) && !is_page_template ( 'page-assortiment.php' )): ?>
+						
                 <div class="header-vis">
                     <h1 class="hide"><?php the_title(); ?></h1>
                     <img src="<?= get_field('header_image'); ?>" alt="">
@@ -101,6 +105,8 @@
 						<div class="header-shadow-main"></div>
                 	<?php endif; ?>
                 </div>
+
+                	<?php endif; ?>
 
                  <?php endwhile; ?>
 			     <?php endif; ?>
