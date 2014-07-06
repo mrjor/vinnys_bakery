@@ -29,7 +29,6 @@
 
                 <?php
                 // The Query
-               
 
                 $args = array(
                     'posts_per_page'   => 0,
@@ -50,10 +49,10 @@
 
                 $count = 0;
 
-                query_posts( $args );
+                $myposts = get_posts( $args );
 
                 // The Loop
-                while ( have_posts() ) : the_post();
+                foreach ( $myposts as $post ) : setup_postdata( $post );
                     ?>
                 
                 <a class="product-item <?=($count%4==3)? 'last' : '' ?>" href="#">
@@ -72,10 +71,10 @@
 
                    <?php
                    $count++;
-                endwhile;
+                endforeach;
 
                 // Reset Query
-                wp_reset_query();
+               wp_reset_postdata();
 
 
                 ?>

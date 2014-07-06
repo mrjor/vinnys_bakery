@@ -62,7 +62,7 @@
                 <nav class="menu">
 					<?php 
 						$args = array(
-							'theme_location'  => '',
+							'theme_location'  => 'header-menu',
 							'menu'            => '',
 							'container'       => '',
 							'container_class' => '',
@@ -70,7 +70,6 @@
 							'menu_class'      => '',
 							'menu_id'         => '',
 							'echo'            => true,
-							'fallback_cb'     => 'header-menu',
 							'before'          => '',
 							'after'           => '',
 							'link_before'     => '',
