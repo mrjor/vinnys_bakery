@@ -86,7 +86,7 @@ header{padding:55px 0 0px 0;}
 .highlights-footer .middle{margin:0 22px;}
 
 .reclames-page .header-vis{padding:0 0 10px 0; background:none;}
-.img-container{margin-top:-20px; background:url(../img/dots.png) bottom left repeat-x; padding-bottom:20px;}
+.img-container{background:url(../img/dots.png) bottom left repeat-x; padding-bottom:20px;}
 .img-container img{display: inline-block; margin-right:5px;}
 .img-container img.last{margin-right:0px;}
 
@@ -153,11 +153,15 @@ transition: all 0.2s ease-out;font-size:1.2em; position:absolute; left: 0; botto
 .extra-container li a{display: table-cell; width: 100%;height: 100%; vertical-align: middle;}
 .extra-title{width: 188px;height: 27px; background:url(../img/extra-title.png) no-repeat top left #fff; position: relative; margin:0 auto -14px auto;}
 
-footer{padding:15px 0;}
+footer{padding:15px 0; margin-top:20px!important; background:url(../img/dots.png) top left repeat-x}
 footer ul{padding:0; margin:0; text-align: center; width:100%;}
 footer ul li{display: inline-block; margin: 0 15px}
 footer ul li a{text-decoration: none; color:#000;}
 footer ul li a:hover{color:#bf1e2e;}
+
+.page-template-page-assortiment-php footer, 
+.page-template-page-assortiment-overzicht-php footer,
+.page-template-page-reclame-php footer{background:none;}
 
 /*IE FIX*/
 .lt-ie9 .product-item{-pie-background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) bottom left repeat-x; behavior: url(css/PIE.htc)}
