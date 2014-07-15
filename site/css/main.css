@@ -86,7 +86,7 @@ header{padding:55px 0 0px 0;}
 .highlights-footer .middle{margin:0 22px;}
 
 .reclames-page .header-vis{padding:0 0 10px 0; background:none;}
-.img-container{margin-top:-20px; background:url(../img/dots.png) bottom left repeat-x; padding-bottom:20px;}
+.img-container{background:url(../img/dots.png) bottom left repeat-x; padding-bottom:20px;}
 .img-container img{display: inline-block; margin-right:5px;}
 .img-container img.last{margin-right:0px;}
 
@@ -127,6 +127,19 @@ transition: all 0.2s ease-out;float:left; position: relative; top:0; display: ta
 .assortiment-container .deactive:hover{opacity: 1}
 .title-assortiment{z-index:1; width:398px; height:27px; display: block; background:url(../img/ass-kies.png) no-repeat top left; position: absolute; top:15px; left:295px; margin:0;}
 
+.opmaat-container{margin:0 0 20px 0; padding:0; list-style: none;  background:url(../img/dots.png) bottom left repeat-x; height:269px;}
+.opmaat-container li{float:left; position: relative; top:0; display: table; text-align: left; width:197px; margin-left:3px; height:468px; background-image: url(../img/info-bg.png); padding:80px 10px 20px 10px; -moz-box-sizing:border-box; box-sizing:border-box;}
+.opmaat-container li.last img{margin-bottom: 13px;}
+.opmaat-container li.first{margin-left:0;}
+.opmaat-container li.last{width:200px;}
+.opmaat-container .deactive{opacity:0.5;}
+.opmaat-container .deactive:hover{opacity: 1}
+.title-opmaat{z-index:1; margin-bottom:20px;width:398px; height:30px; display: block; background:url(../img/taart-op-maat.png) no-repeat top left; position: absolute; top:15px; left:310px; margin:0;}
+.staptitle{margin-bottom:20px;}
+.opmaat-container label{display: block; margin-bottom:5px; cursor:pointer;}
+.personen{margin-top:40px;}
+.opmaat-container select{width:100%; margin-top:10px;}
+
 .producten-container{background:url(../img/dots.png) top left repeat-x; width:100%;}
 .product-item{text-decoration:none; color:#000; position:relative;height:200px; display: block; float: left; width:25%; text-align: center; background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) left bottom repeat-x}
 .product-item .zoom{display:none; position: absolute; top: 10px; right: 10px;}
@@ -153,11 +166,15 @@ transition: all 0.2s ease-out;font-size:1.2em; position:absolute; left: 0; botto
 .extra-container li a{display: table-cell; width: 100%;height: 100%; vertical-align: middle;}
 .extra-title{width: 188px;height: 27px; background:url(../img/extra-title.png) no-repeat top left #fff; position: relative; margin:0 auto -14px auto;}
 
-footer{padding:15px 0; background:url(../img/dots.png) top left repeat-x; }
+footer{padding:15px 0; margin-top:20px!important; background:url(../img/dots.png) top left repeat-x}
 footer ul{padding:0; margin:0; text-align: center; width:100%;}
 footer ul li{display: inline-block; margin: 0 15px}
 footer ul li a{text-decoration: none; color:#000;}
-footer ul li a:hover{color:#bf1e2e;} 
+footer ul li a:hover{color:#bf1e2e;}
+
+.page-template-page-assortiment-php footer, 
+.page-template-page-assortiment-overzicht-php footer,
+.page-template-page-reclame-php footer{background:none;}
 
 /*IE FIX*/
 .lt-ie9 .product-item{-pie-background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) bottom left repeat-x; behavior: url(css/PIE.htc)}
@@ -172,20 +189,20 @@ footer ul li a:hover{color:#bf1e2e;}
 .menu ul{padding:0; margin:0;}
 
 .menu a{ background: url('../img/menu.png') no-repeat top left; display: block; overflow: hidden; text-indent: -999em } 
-.menu a.bezorgservice:hover, .menu .active a.bezorgservice  { background-position: 0px 0px; width: 117px; height: 21px;  } 
-.menu a.bezorgservice { background-position: 0px -31px; width: 117px; height: 21px;  } 
-.menu a.assortiment:hover,.menu .active a.assortiment { background-position: 0px -62px; width: 105px; height: 21px;  } 
-.menu a.assortiment { background-position: 0px -93px; width: 105px; height: 21px;  } 
-.menu a.contact:hover,.menu .active a.contact { background-position: 0px -124px; width: 66px; height: 21px;  } 
-.menu a.contact { background-position: 0px -155px; width: 66px; height: 21px;  } 
-.menu a.home:hover, .menu .active a.home { background-position: 0px -186px; width: 109px; height: 21px;  } 
-.menu a.home { background-position: 0px -217px; width: 109px; height: 21px;  } 
-.menu a.info:hover, .menu .active a.info  { background-position: 0px -248px; width: 98px; height: 21px;  } 
-.menu a.info { background-position: 0px -279px; width: 98px; height: 21px;  } 
-.menu a.reclames:hover, .menu .active a.reclames  { background-position: 0px -310px; width: 78px; height: 21px;  } 
-.menu a.reclames { background-position: 0px -341px; width: 78px; height: 21px;  } 
-.menu a.taart-op-maat:hover, .menu .active a.taart-op-maat { background-position: 0px -372px; width: 103px; height: 21px;  } 
-.menu a.taart-op-maat { background-position: 0px -403px; width: 103px; height: 21px;  } 
+.menu .bezorgservice a:hover, .menu .current_page_item.bezorgservice a  { background-position: 0px 0px; width: 117px; height: 21px;  } 
+.menu .bezorgservice a { background-position: 0px -31px; width: 117px; height: 21px;  } 
+.menu .assortiment a:hover,.menu .current_page_item.assortiment a { background-position: 0px -62px; width: 105px; height: 21px;  } 
+.menu .assortiment a { background-position: 0px -93px; width: 105px; height: 21px;  } 
+.menu .contact a:hover,.menu .current_page_item.contact a { background-position: 0px -124px; width: 66px; height: 21px;  } 
+.menu .contact a { background-position: 0px -155px; width: 66px; height: 21px;  } 
+.menu .home a:hover, .menu .current_page_item.home a { background-position: 0px -186px; width: 109px; height: 21px;  } 
+.menu .home a { background-position: 0px -217px; width: 109px; height: 21px;  } 
+.menu .info a:hover, .menu .current_page_item.info a  { background-position: 0px -248px; width: 98px; height: 21px;  } 
+.menu .info a { background-position: 0px -279px; width: 98px; height: 21px;  } 
+.menu .reclames a:hover, .menu .current_page_item.reclames a  { background-position: 0px -310px; width: 78px; height: 21px;  } 
+.menu .reclames a{ background-position: 0px -341px; width: 78px; height: 21px;  } 
+.menu .taart-op-maat a:hover, .menu .current_page_item.taart-op-maat a { background-position: 0px -372px; width: 103px; height: 21px;  } 
+.menu .taart-op-maat a{ background-position: 0px -403px; width: 103px; height: 21px;  } 
 
 
 
