@@ -44,6 +44,9 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
         <script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.ui.widget.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.iframe-transport.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.fileupload.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

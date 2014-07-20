@@ -95,7 +95,7 @@
                <?php if (have_posts()) : ?>
 			   <?php while (have_posts()) : the_post(); ?>    
                 
-               <?php if(!is_page_template ( 'page-assortiment-overzicht.php' ) && !is_page_template ( 'page-product-info.php' ) && !is_page_template ( 'page-product-info.php' ) && !is_page_template ( 'page-assortiment.php' )): ?>
+               <?php if(!is_page_template ( 'page-assortiment-overzicht.php' ) && !is_page_template ( 'page-product-info.php' ) && !is_page_template ( 'page-product-info.php' ) && !is_page_template ( 'page-assortiment.php' ) && !is_page_template ( 'page-taart-op-maat.php' )): ?>
 						
                 <div class="header-vis">
                     <h1 class="hide"><?php the_title(); ?></h1>
