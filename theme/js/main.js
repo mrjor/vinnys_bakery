@@ -67,7 +67,7 @@ var inputs = get_bestel_inputs();
 	{
 		$('#stap3').addClass('enable');
 	}
-})
+});
 
 $('#fileupload').on('change', function(){
 var inputs = get_bestel_inputs();
@@ -84,7 +84,7 @@ var inputs = get_bestel_inputs();
 	{
 		$('#stap5').addClass('enable');
 	}
-})
+});
 
 $('select[name="custom"]').on('change', function(){
 var inputs = get_bestel_inputs();
@@ -93,7 +93,7 @@ var inputs = get_bestel_inputs();
 	{
 		$('.popup-overlay.popup-bestel').fadeIn();
 	}
-})
+});
 
 $('.btn-overslaan').on('click',function(e){
 	e.preventDefault();
@@ -104,7 +104,6 @@ $('.btn-overslaan').on('click',function(e){
 		return;
 	}
 	$('#'+id).addClass('enable');
-
 });
 
 $(function () {
@@ -130,9 +129,11 @@ $(function () {
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 });
 
- function get_bestel_inputs() {
- 	return $('form#bestel').serializeObject();
- }
+function get_bestel_inputs() {
+ return $('form#bestel').serializeObject();
+}
+
+
 
 
 

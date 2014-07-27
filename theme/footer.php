@@ -47,7 +47,12 @@
         <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.ui.widget.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.iframe-transport.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.fileupload.js"></script>
-        <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+        <?php if(is_page_template ( 'page-taart-op-maat.php' )): ?>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+            <script src="<?php bloginfo('template_url'); ?>/js/form.js"></script>
+        <?php else : ?>
+            <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+        <?php endif; ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

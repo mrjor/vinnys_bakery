@@ -54,7 +54,7 @@
 <!-- end Google Analytics -->
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> ng-app="form">
 <article class="website-wrapper">
 <!-- HEADER -->
         <header class="container"> 
