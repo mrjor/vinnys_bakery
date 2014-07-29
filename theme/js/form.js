@@ -71,7 +71,8 @@ function formCtrl ($scope) {
 		taartset : '',
 		foto : '',
 		text : '',
-		texttype : ''
+		texttype : '',
+		custom : ''
 	}
 
 	$scope.thisText = '';
@@ -87,17 +88,59 @@ function formCtrl ($scope) {
 	});
 
 	$scope.$watch('skip3', function(){
-			if(!$scope.skip3) $scope.inp.foto = '';
+			if($scope.skip3) $scope.inp.foto = '';
+	});
+
+	$scope.$watch('skip4', function(){
+			if($scope.skip4)
+			{
+				$scope.inp.text = '';
+				$scope.inp.texttype = '';
+			} 
 	});
 
 
 	$scope.set_text = function(){
-		console.log('test');
+		console.log('oke!')
 		$scope.inp.text = $scope.thisText;
-		$scope.$apply();
+		//$scope.$apply();
 	};
 
 
+
+	$scope.$watch('inp.text + inp.texttype', function(){
+		console.log('text!' , $scope.inp)
+		if($scope.inp.text != '' && $scope.inp.texttype != '' && $scope.inp.foto != '')
+		{
+			console.log('text + foto')
+			$('.popup-overlay.popup-bestel').fadeIn();	
+		}
+			
+
+		if($scope.inp.text != '' && $scope.inp.texttype != '' && $scope.inp.taartset != '')
+		{
+			console.log('text + taartset')
+			$('.popup-overlay.popup-bestel').fadeIn();
+		}
+	});
+
+	$scope.$watch('inp.custom', function(){
+		console.log($scope.inp.custom)
+		if($scope.inp.custom != '')
+		{
+			console.log('custom + text')
+			$('.popup-overlay.popup-bestel').fadeIn();
+		}
+	});
+
+	$scope.$watch('skip4', function(){
+
+		if($scope.inp.foto != '' || $scope.inp.taartset != '')
+		{
+			console.log('geen text')
+			$('.popup-overlay.popup-bestel').fadeIn();
+		}
+	});
 
 	//JQUERY
 
