@@ -279,7 +279,8 @@ form .bezorgen-container label{min-width:100px; float: left; margin:0 0px 5px 0;
 .btn-bestel{position:absolute; bottom:25px; right:25px;}
 .betalen{margin:30px 0 0 90px;}
 .adres-wrapper h2{width:auto;}
-.adres-wrapper{width:150px; position:absolute; top:52px; right:100px; opacity:0.5;}
+.adres-wrapper{width:150px; position:absolute; top:52px; right:100px; }
+.adres-wrapper.disabled{opacity:0.5;}
 .adres-wrapper input[type="text"]{border:1px #000 solid; padding:5px; margin:0 0 5px 0;}
 .disable{opacity:0.5;-webkit-transition: 0.2s ease-out;
 -o-transition: 0.2s ease-out;

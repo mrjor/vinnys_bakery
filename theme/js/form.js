@@ -65,6 +65,37 @@ function formCtrl ($scope) {
 		{val:'Mini muffin taart (7,-)'		,prijs:7}
 	];
 
+	$scope.smaak = [
+		{val : 'slagroom',prijs:5},
+		{val : 'zwitserse',prijs:10},
+		{val : 'chocolate',prijs:20},
+		{val : 'chipolata',prijs:30}
+	];
+
+	$scope.texttype = [
+		{val:'chocoladeletter', prijs:10},
+		{val:'marsepijn', prijs:10},
+	];
+
+	$scope.bezorgen = [
+		{val:'ophalen'},
+		{val:'bezorgen'},
+		{val:'Diemen'},
+		{val:'ijsburg'},
+	];
+
+	$scope.tijden = [
+		{val : 'tussen 10:00 en 12:00'},
+		{val : 'tussen 12:00 en 13:00'},
+		{val : 'tussen 13:00 en 14:00'},
+		{val : 'tussen 15:00 en 16:00'}
+	]
+
+	$scope.fotoPrijs = 5;
+	$scope.textPrijs = 3;
+	$scope.bezorgenPrijs = 4.50;
+	$scope.btw = 19;
+
 	$scope.inp = {
 		smaak : '',
 		personen : '',
@@ -72,13 +103,27 @@ function formCtrl ($scope) {
 		foto : '',
 		text : '',
 		texttype : '',
-		custom : ''
+		custom : '',
+		bezorgen : ''
+	}
+
+	$scope.form = {
+		naam : '',
+		tel : '',
+		email : '',
+		datum : '',
+		tijd : '',
+		postcode : '',
+		huisnummer : '',
+		plaats : '',
+		bezorgen : ''
 	}
 
 	$scope.thisText = '';
 	$scope.skip2 = false;
 	$scope.skip3 = false;
 	$scope.skip4 = false;
+	$scope.skip5 = false;
 
 
 
@@ -91,18 +136,16 @@ function formCtrl ($scope) {
 			if($scope.skip3) $scope.inp.foto = '';
 	});
 
-	$scope.$watch('skip4', function(){
-			if($scope.skip4)
-			{
-				$scope.inp.text = '';
-				$scope.inp.texttype = '';
-			} 
+
+
+	$scope.$watch('form.bezorgen', function(){
+			get_price();
 	});
 
 
 	$scope.set_text = function(){
 		console.log('oke!')
-		$scope.inp.text = $scope.thisText;
+		$scope.inp.text = {val : $scope.thisText, prijs : $scope.textPrijs};
 		//$scope.$apply();
 	};
 
@@ -113,14 +156,14 @@ function formCtrl ($scope) {
 		if($scope.inp.text != '' && $scope.inp.texttype != '' && $scope.inp.foto != '')
 		{
 			console.log('text + foto')
-			$('.popup-overlay.popup-bestel').fadeIn();	
+			show_order();
 		}
 			
 
 		if($scope.inp.text != '' && $scope.inp.texttype != '' && $scope.inp.taartset != '')
 		{
 			console.log('text + taartset')
-			$('.popup-overlay.popup-bestel').fadeIn();
+			show_order();
 		}
 	});
 
@@ -129,18 +172,65 @@ function formCtrl ($scope) {
 		if($scope.inp.custom != '')
 		{
 			console.log('custom + text')
-			$('.popup-overlay.popup-bestel').fadeIn();
+			show_order();
 		}
 	});
 
 	$scope.$watch('skip4', function(){
 
+		if($scope.skip4)
+		{
+			$scope.inp.text = '';
+			$scope.inp.texttype = '';
+		} 
+
 		if($scope.inp.foto != '' || $scope.inp.taartset != '')
 		{
 			console.log('geen text')
-			$('.popup-overlay.popup-bestel').fadeIn();
+			show_order();
 		}
 	});
+
+	$scope.$watch('skip5', function(){
+
+		if($scope.skip5)
+		{
+			$scope.inp.custom = '';
+		} 
+			
+		if($scope.inp.smaak != '' || $scope.inp.personen != '')
+		{
+			console.log('geen text')
+			show_order();
+		}	
+
+	});
+
+	function show_order () {
+		get_price();
+		$('.popup-overlay.popup-bestel').fadeIn();
+	}
+
+	function get_price () {
+		var input = angular.copy($scope.inp);
+		var count = 0;
+		for(i in input)
+		{
+			if(input[i].prijs)
+			{
+				count += input[i].prijs;
+			}
+		}
+
+		if($scope.form.bezorgen == 'bezorgen')
+		{
+			count += $scope.bezorgenPrijs;
+		}
+
+		//BTW
+		var btw = count / 100 * $scope.btw;
+		$scope.prijs = count + btw;
+	}
 
 	//JQUERY
 
@@ -151,7 +241,7 @@ function formCtrl ($scope) {
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
             	console.log(file.name)
-                $scope.inp.foto = file.name;
+                $scope.inp.foto = {val : file.name, prijs : $scope.fotoPrijs};
                 $scope.$apply();
                 console.log($scope.inp);
             });

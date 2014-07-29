@@ -11,22 +11,12 @@
             <ul class="opmaat-container">
                 <li class="red first" id="stap1">
                     <img class="staptitle" src="<?php bloginfo('template_url'); ?>/img/title-stap1.png" alt="">
-                    <label>
-                        <input ng-model="inp.smaak" type="radio" checked name="type" value="slagroom" id="">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-slagroom.png" alt="">
+                    <label ng-repeat="item in smaak">
+                        <input ng-model="inp.smaak" type="radio" checked name="type" ng-value="item" id="">
+                        <img ng-src="<?php bloginfo('template_url'); ?>/img/tom-{{item.val}}.png" alt="">
                     </label>
-                    <label>
-                        <input ng-model="inp.smaak" type="radio" name="type" value="zwitserse" id="">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-zwitserse.png" alt="">
-                    </label>
-                    <label>
-                        <input ng-model="inp.smaak" type="radio" name="type" value="chocolade" id="">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-chocolate.png" alt="">
-                    </label>
-                    <label>
-                        <input ng-model="inp.smaak" type="radio" name="type" value="chipolata" id="">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-chipolata.png" alt="">
-                    </label>
+
+                    
 
                     <img class="personen" src="<?php bloginfo('template_url'); ?>/img/tom-aantal-personen.png" alt="">
 
@@ -96,16 +86,12 @@
 
                     <a href="" class="btn-ok" ng-click="set_text(thisText)"><img src="<?php bloginfo('template_url'); ?>/img/btn-ok.png" height="38" width="41" alt=""></a>
 
-                    <label>
-                        <input type="radio" ng-model="inp.texttype" value="chocolade" name="letterssmaak" id="">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-chocoladeletter.png" alt="">
+                    <label ng-repeat="item in texttype">
+                        <input type="radio" ng-model="inp.texttype" ng-value="item" name="letterssmaak" id="">
+                        <img ng-src="<?php bloginfo('template_url'); ?>/img/tom-{{item.val}}.png" alt="">
                     </label>
-
-
-                    <label>
-                        <input type="radio" ng-model="inp.texttype" value="marsepijn" name="letterssmaak" id="">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-marsepijn.png" height="18" width="164" alt="">
-                    </label>
+                    
+    
                      <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img3.png" height="67" width="129" alt=""></div>
 
                      <a href="#" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="
@@ -151,7 +137,7 @@
                         </div>
                      </a>
 
-                    <a href="#" class="btn-overslaan" rel="bestel"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
+                    <a href="#" class="btn-overslaan" ng-click="skip5=true" rel="bestel"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
 
 
                 </li>
@@ -188,50 +174,45 @@
                             <form action="">
                                <div class="price">
                                    Totaal prijs
-                                   <span class="output">euro <span id="price-output">25,00</span></span>
+                                   <span class="output"><span id="price-output">{{prijs | currency : '€ '}},-</span></span>
                                </div>
                                 <div class="gegevens">
                                     <h2>uw gegevens</h2>
                                     <div class="inp-wrapper">
                                         <label for="naam">Naam</label>
-                                        <input type="text" id="naam" name="naam" />
+                                        <input type="text" id="naam" name="naam" ng-model="form.naam" />
                                     </div>
                                     <div class="inp-wrapper">
                                         <label for="tel">tel. nr</label>
-                                        <input type="text" id="tel" name="tel" />
+                                        <input type="text" id="tel" ng-model="form.tel" name="tel" />
                                     </div>
                                     <div class="inp-wrapper">
                                         <label for="email">email</label>
-                                        <input type="text" id="email" name="email" />
+                                        <input type="text" ng-model="form.email" id="email" name="email" />
                                     </div>
                                     <div class="bezorgen-container">
-                                    <label><input type="radio" checked name="bezorgen" value="ophalen"> Ophalen</label>
-                                    <label><input type="radio" name="bezorgen" value="bezorgen"> Bezorgen (4.50)</label>
-                                    <label><input type="radio" name="bezorgen" value="diemen"> diemen</label>
-                                    <label><input type="radio" name="bezorgen" value="ijsburg"> ijsburg</label>
+                                        <label ng-repeat="item in bezorgen">
+                                            <input type="radio" ng-model="form.bezorgen" checked name="bezorgen" value="{{item.val}}"> {{item.val}} <span ng-show="item.val == 'bezorgen'">({{bezorgenPrijs | currency : ''}})</span>
+                                        </label>
                                     </div>
                                     <div class="inp-wrapper">
-                                        <label for="datum">datum</label><input id="datum" type="text" name="date">
+                                        <label for="datum">datum</label><input ng-model="form.datum" id="datum" type="text" name="date">
                                     </div>
                                     <div class="inp-wrapper">
                                         <label for="tijd">tijd</label>
-                                         <select name="tijd" id="tijd">
-                                            <option value="1">stussen 10:00 en 15:00</option>
-                                            <option value="2">stussen 10:00 en 15:00</option>
-                                            <option value="2">stussen 10:00 en 15:00</option>
-                                            <option value="2">stussen 10:00 en 15:00</option>
-                                            <option value="2">stussen 10:00 en 15:00</option>
+                                        <select ng-model="form.tijd" ng-options="tijd.val for tijd in tijden" name="tijd" id="tijd">
+                                            <option value="">Kies een bezorgtijd</option>
                                         </select>
                                     </div>
                                     <div class="betalen">Betalen met Ideal <img src="<?php bloginfo('template_url'); ?>/img/ideal.png" height="29" width="33" alt=""></div>
 
                                 </div>
-                                <div class="adres-wrapper disable">
+                                <div class="adres-wrapper" ng-class="{disable:form.bezorgen != 'bezorgen'}">
                                     <div class="disable-wrapper"></div>
                                     <h2>bezorg adres</h2>
-                                    <input type="text" id="postcode" name="postcode" placeholder="postcode">
-                                    <input type="text" id="postcode" name="huisnummer" placeholder="huisnummer">
-                                    <input type="text" id="postcode" name="plaats" placeholder="plaats">
+                                    <input type="text" ng-model="form.postcode" id="postcode" name="postcode" placeholder="postcode">
+                                    <input type="text" ng-model="form.huisnummer" id="huisnummer" name="huisnummer" placeholder="huisnummer">
+                                    <input type="text" ng-model="form.postcode" id="plaats" name="plaats" placeholder="plaats">
                                 </div>
 
                                 <a href="#" class="btn-bestel"><img src="<?php bloginfo('template_url'); ?>/img/btn-bestel.png" height="47" width="107" alt=""></a>
