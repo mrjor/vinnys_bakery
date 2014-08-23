@@ -2,18 +2,20 @@ angular.module('form', []);
 
 
 
-function formCtrl ($scope) {
-	$scope.personen = [
-		{val:'1 persoon (1,-)',prijs:1,pers:1},
-		{val:'2 personen (2,-)',prijs:2,pers:2},
-		{val:'3 personen (3,-)',prijs:3,pers:3},
-		{val:'4 personen (4,-)',prijs:4,pers:4},
-		{val:'5 personen (5,-)',prijs:5,pers:5},
-		{val:'6 personen (6,-)',prijs:6,pers:6},
-		{val:'7 personen (7,-)',prijs:7,pers:7},
-		{val:'12 personen (7,-)',prijs:7,pers:12},
-		{val:'20 personen (7,-)',prijs:7,pers:20}
-	]
+function formCtrl ($scope, $filter) {
+	$scope.patern = {
+		postcode : /^[1-9][0-9]{3}[\s]?[A-Za-z]{2}$/i,
+        phone : /(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/,
+        num : /^[0-9]*$/,
+        email : /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+	}
+
+	$scope.orderConfirmed = false;
+	$scope.fileError = false;
+	$scope.overleg = false;
+	$scope.submitted = false;
+
+
 
 	$scope.taartset = [
 		{val:'taartset (1,-)',prijs:1},
@@ -66,22 +68,69 @@ function formCtrl ($scope) {
 	];
 
 	$scope.smaak = [
-		{val : 'slagroom',prijs:5},
-		{val : 'zwitserse',prijs:10},
-		{val : 'chocolate',prijs:20},
-		{val : 'chipolata',prijs:30}
+		{val : 'slagroom',prijs:0},
+		{val : 'zwitserse',prijs:0},
+		{val : 'chocolate',prijs:0},
+		{val : 'chipolata',prijs:0}
 	];
 
+	$scope.persoonkeuses = [];
+
+	$scope.personen = 
+	{
+		slagroom : [
+			{val:'8 persoon (12,-)',prijs:12,pers:8},
+			{val:'12 personen (18,-)',prijs:18,pers:12},
+			{val:'16 personen (24,-)',prijs:24,pers:16},
+			{val:'20 personen (30,-)',prijs:30,pers:20},
+			{val:'25 personen (37,50,-)',prijs:37.50,pers:25},
+			{val:'30 personen (45,-)',prijs:45,pers:30},
+			{val:'38 personen (57,-)',prijs:57,pers:38},
+			{val:'46 personen (69,-)',prijs:69,pers:46}
+		],
+		zwitserse : [
+			{val:'8 persoon (12,-)',prijs:12,pers:8},
+			{val:'12 personen (18,-)',prijs:18,pers:12},
+			{val:'16 personen (24,-)',prijs:24,pers:16},
+			{val:'20 personen (30,-)',prijs:30,pers:20},
+			{val:'25 personen (37,50,-)',prijs:37.50,pers:25},
+			{val:'30 personen (45,-)',prijs:45,pers:30},
+			{val:'38 personen (57,-)',prijs:57,pers:38},
+			{val:'46 personen (69,-)',prijs:69,pers:46}
+		],
+		chocolate : [
+			{val:'8 persoon (14,-)',prijs:14,pers:8},
+			{val:'12 personen (21,-)',prijs:21,pers:12},
+			{val:'16 personen (28,-)',prijs:28,pers:16},
+			{val:'20 personen (35,-)',prijs:35,pers:20},
+			{val:'25 personen (43,75,-)',prijs:43.75,pers:25},
+			{val:'30 personen (52,50,-)',prijs:52.50,pers:30},
+			{val:'38 personen (66,50,-)',prijs:66.50,pers:38},
+			{val:'46 personen (80,50,-)',prijs:80.50,pers:46}
+		],
+		chipolata : [
+			{val:'8 persoon (16,-)',prijs:16,pers:8},
+			{val:'12 personen (24,-)',prijs:24,pers:12},
+			{val:'16 personen (32,-)',prijs:32,pers:16},
+			{val:'20 personen (40,-)',prijs:40,pers:20},
+			{val:'25 personen (50,-)',prijs:50,pers:25},
+			{val:'30 personen (60,-)',prijs:60,pers:30},
+			{val:'38 personen (76,-)',prijs:76,pers:38},
+			{val:'46 personen (92,-)',prijs:92,pers:46}
+		]
+	}
+	
+
 	$scope.texttype = [
-		{val:'chocoladeletter', prijs:10},
-		{val:'marsepijn', prijs:10},
+		{val:'chocoladeletter', prijs:1.50},
+		{val:'marsepijn', prijs:4.50}
 	];
 
 	$scope.bezorgen = [
 		{val:'ophalen'},
 		{val:'bezorgen'},
 		{val:'Diemen'},
-		{val:'ijsburg'},
+		{val:'ijsburg'}
 	];
 
 	$scope.tijden = [
@@ -91,10 +140,10 @@ function formCtrl ($scope) {
 		{val : 'tussen 15:00 en 16:00'}
 	]
 
-	$scope.fotoPrijs = 5;
-	$scope.textPrijs = 3;
+	$scope.fotoPrijs = 7;
+	$scope.textPrijs = 0;
 	$scope.bezorgenPrijs = 4.50;
-	$scope.btw = 19;
+	$scope.btw = 0;
 
 	$scope.inp = {
 		smaak : '',
@@ -125,7 +174,13 @@ function formCtrl ($scope) {
 	$scope.skip4 = false;
 	$scope.skip5 = false;
 
-
+	$scope.$watch('inp.smaak', function(){
+		console.log('smaak', $scope.inp.smaak)
+		if($scope.inp.smaak != '')
+		{
+			$scope.persoonkeuses = $scope.personen[$scope.inp.smaak.val];
+		}
+	})
 
 	$scope.$watch('skip2', function(){
 			console.log('stap2 skipped')
@@ -206,6 +261,55 @@ function formCtrl ($scope) {
 
 	});
 
+	$scope.bestel = function(){
+		$scope.submitted = true;
+
+		if(!$scope.formOrder.$valid) return;	
+
+		var bestelling =  angular.copy($scope.inp);
+		var gegevens =  angular.copy($scope.form);
+		var orderData = {};
+
+		gegevens.tijd = gegevens.tijd.val;
+		gegevens.prijs = $scope.prijs;
+
+		for(i in bestelling)
+		{
+			if(bestelling[i].val)
+			orderData[i] = bestelling[i].val
+		}
+
+		if($scope.overleg)
+		{
+			gegevens.overleg = $scope.overleg;
+		}
+
+		var data = angular.extend(orderData, gegevens);
+
+		console.log('bestel', data);
+
+		if(!$scope.overleg)
+		{
+			$.post('wp-content/themes/vinny/php/handlers/mail.php', data, function(){
+				$scope.orderConfirmed = true;
+				
+				$scope.$apply();
+			})
+
+		}
+		else
+		{
+			$.post('wp-content/themes/vinny/php/handlers/mail_overleg.php', data, function(){
+				$scope.orderConfirmed = true;
+		
+				$scope.$apply();
+			})
+		}
+
+
+		
+	}
+
 	function show_order () {
 		get_price();
 		$('.popup-overlay.popup-bestel').fadeIn();
@@ -218,7 +322,12 @@ function formCtrl ($scope) {
 		{
 			if(input[i].prijs)
 			{
-				count += input[i].prijs;
+				if(input[i].prijs == 'overleg')
+				{
+					$scope.overleg = true;
+				}
+
+				count += parseFloat(input[i].prijs);
 			}
 		}
 
@@ -229,7 +338,7 @@ function formCtrl ($scope) {
 
 		//BTW
 		var btw = count / 100 * $scope.btw;
-		$scope.prijs = count + btw;
+		$scope.prijs = $filter('currency')(count + btw, '');
 	}
 
 	//JQUERY
@@ -238,14 +347,26 @@ function formCtrl ($scope) {
     $('#fileupload').fileupload({
         url: url,
         dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-            	console.log(file.name)
-                $scope.inp.foto = {val : file.name, prijs : $scope.fotoPrijs};
-                $scope.$apply();
-                console.log($scope.inp);
-            });
-        }
+        maxFileSize: 50000000,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+    })
+    .on('fileuploadprocessalways', function (e, data) {
+    	if(data.files.error)
+    	{
+    		$scope.fileError = true;
+    		$scope.$apply();
+    	}
+    })
+    .on('fileuploaddone', function (e, data) {
+    	$scope.fileError = false;
+       	$.each(data.result.files, function (index, file) {
+            	
+        		if(file.name)
+            	{
+                	$scope.inp.foto = {val : file.name, prijs : $scope.fotoPrijs};
+                	$scope.$apply();
+            	}
+        }); 
     });
 
     $scope.$watch('inp.foto', function(){
@@ -274,6 +395,8 @@ function formCtrl ($scope) {
 	$('.popup-container').on('click', function(e){
 		e.stopPropagation();
 	});
+
+	$( "#datum" ).datepicker();
 
 
 

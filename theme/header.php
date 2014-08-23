@@ -5,7 +5,10 @@
  * @author Alan Gabriel Dawidowicz - www.alandawi.com.ar
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 
 <meta charset="utf-8">
@@ -45,6 +48,7 @@
 <!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script>window.html5 || document.write('<script src="<?php bloginfo('template_url'); ?>/js/vendor/html5shiv.js"><\/script>')</script>
+	<script src="<?php bloginfo('template_url'); ?>/js/vendor/json2.js"></script>
 <![endif]-->
 
 
@@ -86,7 +90,7 @@
                 </nav>
 
                  <div class="social">
-                    blijf op de hoogte <a href="#" class="icon-facebook"></a>
+                    blijf op de hoogte <a href="https://www.facebook.com/pages/Vinnys-Bakery/195815210529181?fref=ts" target="_blank" class="icon-facebook"></a>
                 </div>
 
               

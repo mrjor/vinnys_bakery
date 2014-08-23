@@ -31,7 +31,7 @@
                 // The Query
 
                 $args = array(
-                    'posts_per_page'   => 0,
+                    'posts_per_page'   => -1,
                     'offset'           => 0,
                     'category'         => $cat_id,
                     'orderby'          => 'post_date',

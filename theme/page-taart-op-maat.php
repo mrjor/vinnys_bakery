@@ -20,7 +20,7 @@
 
                     <img class="personen" src="<?php bloginfo('template_url'); ?>/img/tom-aantal-personen.png" alt="">
 
-                    <select ng-model="inp.personen" name="personen" id="personen" ng-options="aantal.val for aantal in personen">
+                    <select ng-model="inp.personen" name="personen" id="personen" ng-options="aantal.val for aantal in persoonkeuses">
                         <option value="">Selecteer aantal personen</option>
 
                     </select>
@@ -35,10 +35,10 @@
                     <img class="vanaf" src="<?php bloginfo('template_url'); ?>/img/tom-vanaf12personen.png" height="26" width="164" alt="">
                     
                     <div class="tom-img">
-                        <img src="<?php bloginfo('template_url'); ?>/img/tom-img.png" height="64" width="127" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/img/tom-img.png" alt="">
                     </div>
 
-                    <a href="#" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="">
+                    <a href="" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="">
                         <div class="popup-content">
                             <div class="slide">
                                 <img src="<?php bloginfo('template_url'); ?>/img/slide-image.png" height="337" width="409" alt="">
@@ -50,7 +50,7 @@
                         </div>
                     </a>
 
-                    <a href="#" class="btn-overslaan" rel="3" ng-click="skip2=true"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
+                    <a href="" class="btn-overslaan" rel="3" ng-click="skip2=true"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
                 </li>
                 <li class="orange" ng-class="{enable:inp.personen.pers < 11 && inp.smaak != '' && !skip3 || !skip3 && skip2, disable:inp.smaak == '' || inp.personen == '' || inp.personen.pers > 11 || skip3 || skip2 && skip3}" id="stap3">
                     <div class="disable-wrapper"></div>
@@ -60,10 +60,12 @@
                   <a class="upload-image btn btn-success fileinput-button" href="#"><img src="<?php bloginfo('template_url'); ?>/img/btn-uploadfoto.png" height="43" width="137" alt="">
                         <input id="fileupload" type="file" name="files[]" multiple>
                     </a> 
+                    <div ng-show="fileError" class="error">Er is iets mis gegaan, probeer het nog eens</div>
+                    <div ng-show="inp.foto != '' && !fileError" class="error">Uw foto is geupload</div>
 
-                    <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img2.png" height="67" width="129" alt=""></div>
+                    <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img2.png" alt=""></div>
 
-                     <a href="#" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="">
+                     <a href="" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="">
  <div class="popup-content">
                             <div class="slide">
                                 <img src="<?php bloginfo('template_url'); ?>/img/slide-image.png" height="337" width="409" alt="">
@@ -76,7 +78,7 @@
                         </div>
                      </a>
 
-                    <a href="#" class="btn-overslaan" ng-click="skip3=true" rel="4"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
+                    <a href="" class="btn-overslaan" ng-click="skip3=true" rel="4"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
                 </li>
                 <li class="blue" ng-class="{enable:inp.foto != '' && !skip4 || inp.taartset != '' && !skip4 || skip3 && !skip4, disable:inp.taartset == '' || inp.foto == '' || skip4}" id="stap4">
                     <div class="disable-wrapper"></div>
@@ -92,9 +94,9 @@
                     </label>
                     
     
-                     <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img3.png" height="67" width="129" alt=""></div>
+                     <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img3.png" alt=""></div>
 
-                     <a href="#" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="
+                     <a href="" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="
                     ">
                      <div class="popup-content">
                             <div class="slide">
@@ -107,7 +109,7 @@
                         </div>
                      </a>
 
-                    <a href="#" class="btn-overslaan" ng-click="skip4=true" rel="5"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
+                    <a href="" class="btn-overslaan" ng-click="skip4=true" rel="5"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
            
 
 
@@ -122,9 +124,9 @@
 
                     </select>
 
-                     <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img4.png" height="67" width="129" alt=""></div>
+                     <div class="tom-img"><img src="<?php bloginfo('template_url'); ?>/img/tom-img4.png" alt=""></div>
 
-                     <a href="#" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="">
+                     <a href="" class="btn-voorbeeld"><img src="<?php bloginfo('template_url'); ?>/img/tom-bekijk-voorbeelden.png" height="31" width="170" alt="">
                          <div class="popup-content">
                             <div class="slide">
                                 <img src="<?php bloginfo('template_url'); ?>/img/slide-image.png" height="337" width="409" alt="">
@@ -137,7 +139,7 @@
                         </div>
                      </a>
 
-                    <a href="#" class="btn-overslaan" ng-click="skip5=true" rel="bestel"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
+                    <a href="" class="btn-overslaan" ng-click="skip5=true" rel="bestel"><img src="<?php bloginfo('template_url'); ?>/img/tom-overslaan.png" height="39" width="162" alt=""></a>
 
 
                 </li>
@@ -171,8 +173,8 @@
                         
 
                         <div class="content-container">
-                            <form action="">
-                               <div class="price">
+                            <form action="" ng-show="!orderConfirmed" name="formOrder">
+                               <div class="price" ng-show="!overleg">
                                    Totaal prijs
                                    <span class="output"><span id="price-output">{{prijs | currency : '€ '}},-</span></span>
                                </div>
@@ -180,43 +182,51 @@
                                     <h2>uw gegevens</h2>
                                     <div class="inp-wrapper">
                                         <label for="naam">Naam</label>
-                                        <input type="text" id="naam" name="naam" ng-model="form.naam" />
+                                        <input type="text" id="naam" name="naam" ng-model="form.naam" ng-class="{true: 'error_form'}[submitted && !form.naam]" required/>
                                     </div>
                                     <div class="inp-wrapper">
                                         <label for="tel">tel. nr</label>
-                                        <input type="text" id="tel" ng-model="form.tel" name="tel" />
+                                        <input type="text" id="tel" ng-pattern="patern.phone" ng-model="form.tel" name="tel" required/ ng-class="{true: 'error_form'}[submitted && !form.tel]">
                                     </div>
                                     <div class="inp-wrapper">
                                         <label for="email">email</label>
-                                        <input type="text" ng-model="form.email" id="email" name="email" />
+                                        <input type="text" ng-model="form.email" ng-pattern="patern.email" id="email" name="email" required ng-class="{true: 'error_form'}[submitted && !form.email]"/>
                                     </div>
                                     <div class="bezorgen-container">
                                         <label ng-repeat="item in bezorgen">
-                                            <input type="radio" ng-model="form.bezorgen" checked name="bezorgen" value="{{item.val}}"> {{item.val}} <span ng-show="item.val == 'bezorgen'">({{bezorgenPrijs | currency : ''}})</span>
+                                            <input type="radio" ng-model="form.bezorgen" name="bezorgen" value="{{item.val}}"> {{item.val}} <span ng-show="item.val == 'bezorgen'">({{bezorgenPrijs | currency : ''}})</span>
                                         </label>
+                                        <div class="message" ng-show="{true: 'error_form'}[submitted && !form.bezorgen]">Selecteer een bezorg locatie</div>
                                     </div>
                                     <div class="inp-wrapper">
-                                        <label for="datum">datum</label><input ng-model="form.datum" id="datum" type="text" name="date">
+                                        <label for="datum">datum</label><input required ng-model="form.datum" id="datum" type="text" name="date" ng-class="{true: 'error_form'}[submitted && !form.datum]">
                                     </div>
                                     <div class="inp-wrapper">
                                         <label for="tijd">tijd</label>
-                                        <select ng-model="form.tijd" ng-options="tijd.val for tijd in tijden" name="tijd" id="tijd">
+                                        <select ng-model="form.tijd" requred  ng-options="tijd.val for tijd in tijden" name="tijd" id="tijd">
                                             <option value="">Kies een bezorgtijd</option>
                                         </select>
+                                        <div class="message message_pos"  ng-show="{true: 'error_form'}[submitted && !form.tijd]">U moet een bezorgtijd uitkiezen</div>
                                     </div>
-                                    <div class="betalen">Betalen met Ideal <img src="<?php bloginfo('template_url'); ?>/img/ideal.png" height="29" width="33" alt=""></div>
+                                    <div class="betalen" ng-show="!overleg">Betalen met Ideal <img src="<?php bloginfo('template_url'); ?>/img/ideal.png" height="29" width="33" alt=""></div>
 
                                 </div>
                                 <div class="adres-wrapper" ng-class="{disable:form.bezorgen != 'bezorgen'}">
                                     <div class="disable-wrapper"></div>
                                     <h2>bezorg adres</h2>
-                                    <input type="text" ng-model="form.postcode" id="postcode" name="postcode" placeholder="postcode">
-                                    <input type="text" ng-model="form.huisnummer" id="huisnummer" name="huisnummer" placeholder="huisnummer">
-                                    <input type="text" ng-model="form.postcode" id="plaats" name="plaats" placeholder="plaats">
+                                    <input type="text" ng-model="form.postcode" ng-class="{true: 'error_form'}[submitted && !form.postcode && form.bezorgen == 'bezorgen']" ng-required="form.bezorgen == 'bezorgen'"   ng-pattern="patern.postcode" id="postcode" name="postcode" placeholder="postcode">
+                                    <input type="text" ng-model="form.huisnummer" ng-class="{true: 'error_form'}[submitted && !form.huisnummer && form.bezorgen == 'bezorgen']" ng-required="form.bezorgen == 'bezorgen'" id="huisnummer" name="huisnummer" placeholder="huisnummer">
+                                    <input type="text" ng-model="form.plaats" ng-class="{true: 'error_form'}[submitted && !form.plaats && form.bezorgen == 'bezorgen']" ng-required="form.bezorgen == 'bezorgen'"  id="plaats" name="plaats" placeholder="plaats">
                                 </div>
 
-                                <a href="#" class="btn-bestel"><img src="<?php bloginfo('template_url'); ?>/img/btn-bestel.png" height="47" width="107" alt=""></a>
+                                <div ng-show="inp.foto != ''" class="foto"><img width="200" ng-src="<?php bloginfo('template_url'); ?>/server/php/files/{{inp.foto.val}}" alt=""></div>
+
+                                <a href="" class="btn-bestel" ng-click="bestel()"><img src="<?php bloginfo('template_url'); ?>/img/btn-bestel.png" height="47" width="107" alt=""></a>
                             </form>
+
+                            <div class="bedankt" ng-show="orderConfirmed">
+                                <h2>Bedankt uw bestelling is verzonden!</h2>
+                            </div>
                         </div>
 
                        

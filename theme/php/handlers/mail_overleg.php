@@ -29,17 +29,10 @@ $foto = $jh->get('foto');
 $vinnyMail = 'joranveenstra@gmail.com';
 $from = 'service@mediakweker.nl';
 
-if($tel == '' && $naam == '' && $email == '' && $datum == '' && $tijd  == '' && $prijs == '')
-{
-	$jh->iState = 0;
-	$jh->render();
-	exit;
-}
-
 
 $orderId = time().'_'.trim(str_replace(' ','_',$naam));
 
-$mail_order_templ = file_get_contents('mail_temp/order.html');
+$mail_order_templ = file_get_contents('mail_temp/confirm_overleg.html');
 
 //ORDER MAIL
 
@@ -98,83 +91,16 @@ $mail_order_templ = str_replace(
 );
 
 $mail->isHTML(true);  
-$mail->Subject = 'Taart op maat betaalde bestelling'; // subject
+$mail->Subject = 'Taart op maat aangevraagde bestelling'; // subject
 $mail->msgHTML($mail_order_templ, dirname(__FILE__)); 
 
-//CONFIRM MAIL
-$mail_confirm_templ = file_get_contents('mail_temp/confirm.html');
-
-$confirm_mail->setFrom($from, 'Vinny\'s Bakery'); // from
-$confirm_mail->addAddress($email);     // Add a recipient
-//$confirm_mail->addCC('service@mediakweker.nl');
-
-if($foto != '')
-{
-	$confirm_mail->addAttachment($foto, $orderId.'.jpg');    // Optional name
-}
-	
-$mail_confirm_templ = str_replace(
-	array(
-		"{{id}}",
-		"{{tel}}",
-		"{{naam}}",
-		"{{email}}",
-		"{{bezorgen}}",
-		"{{datum}}",
-		"{{tijd}}",
-		"{{postcode}}",
-		"{{huisnummer}}",
-		"{{plaats}}", 
-		"{{foto}}",
-		"{{smaak}}",
-		"{{personen}}",
-		"{{taart}}",
-		"{{tekst}}",
-		"{{texttype}}",
-		"{{prijs}}",
-		"{{custom}}",
-		"{{taartset}}"
-	),
-	array(
-		$orderId,
-		$tel,
-		$naam,
-		$email,
-		$bezorgen,
-		$datum,
-		$tijd,
-		$postcode,
-		$huisnummer,
-		$plaats, 
-		$foto,
-		$smaak,
-		$personen,
-		$taart,
-		$tekst,
-		$texttype,
-		$prijs,
-		$customTaart,
-		$taartset
-	),
-	$mail_confirm_templ
-);
-
-$confirm_mail->isHTML(true);  
-$confirm_mail->Subject = 'Uw bestelling'; // subject
-$confirm_mail->msgHTML($mail_confirm_templ, dirname(__FILE__)); 
 
 
 if(!$mail->send()) {
     $jh->iState = 0;
 } else {
-	if(!$confirm_mail->send()) {
-		$jh->iState = 0;
-	}
-	else
-	{
-		$jh->iState = 1;
-	}
-    
+	
+    $jh->iState = 1;
 }
 
 $jh->render();

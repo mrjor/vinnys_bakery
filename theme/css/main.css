@@ -118,6 +118,12 @@ body{ font:13px/1.5em 'claire_handbold', arial; background-color: #bf1e2e; }
 .website-wrapper{margin:5px 0; background:url(../img/dots.png) top left repeat-x, url(../img/dots.png) bottom left repeat-x; background-color: #fff}
 .hide{display: none;}
 div{position:relative;}
+.error_form{border:1px solid red!important;}
+.message{display: block; color:red; font-size: 10px;clear: both;position: absolute;top: -6px;left: -64px;width: 62px;}
+
+.error{position:absolute; top: 251px;left: 0; text-align: center;font-size: 10px;padding: 0 30px;line-height: normal;width: 137px;}
+.message_pos{position: absolute;top: 25px;left: 87px;width: auto;}
+
 
 p{margin:0 0 1em 0;}
 h2{margin:0 0 0.8em 0; font-weight: normal}
@@ -198,24 +204,24 @@ transition: all 0.2s ease-out;float:left; position: relative; top:0; display: ta
 .opmaat-container li.last{width:200px;}
 .opmaat-container .deactive{opacity:0.5;}
 .opmaat-container .deactive:hover{opacity: 1}
-.title-opmaat{z-index:1; margin-bottom:20px;width:398px; height:30px; display: block; background:url(../img/taart-op-maat.png) no-repeat top left; position: absolute; top:15px; left:310px; margin:0;}
+.title-opmaat{z-index:3; margin-bottom:20px;width:398px; height:30px; display: block; background:url(../img/taart-op-maat.png) no-repeat top left; position: absolute; top:15px; left:310px; margin:0;}
 .staptitle{margin-bottom:20px;}
 .opmaat-container label{display: block; margin-bottom:5px; cursor:pointer;}
 .personen{margin-top: 54px;}
 .opmaat-container select{width:100%; margin-top:10px;}
 .vanaf{margin-top:10px;}
-.tom-img{text-align: center; margin:29px 0 20px 0; display: block}
+.tom-img{text-align: center; margin: 31px 0 9px 0; display: block}
 .tom-img img{margin:0!important;}
 .green select{margin-top:0px;}
 .upload-image{display:block; text-align: center}
-.orange .tom-img{margin-top:45px;}
+.orange .tom-img{margin-top: 50px;margin-bottom: 8px;}
 .text-input{border:1px #000 solid; margin-bottom:15px; width:80%; padding:3px 0 3px 4px; color:#000; font-family: 'claire_handlight';}
 .btn-ok{position:absolute; top:202px; right:10px;}
-.blue .tom-img{margin-top:10px; margin-bottom:10px;}
+.blue .tom-img{margin-top: 4px; margin-bottom: 9px;}
 .blue .staptitle{margin-bottom:5px;}
 .btn-overslaan{width:100%; text-align: center; display: block;}
 .orange .staptitle{margin-bottom:10px;}
-.yellow .tom-img{margin-top:65px; margin-bottom:16px}
+.yellow .tom-img{margin-top: 65px; margin-bottom: 9px;}
 .yellow a img{}
 a .popup-content{display:none;}
 .slide{width:419px!important; height:347px!important; overflow: visible!important; margin:50px auto 0 auto;}
@@ -248,7 +254,7 @@ transition: all 0.2s ease-out;font-size:1.2em; position:absolute; left: 0; botto
 .popup-container .content-container .popup-text p{margin:0;}
 .popup-slide .popup-container{height:427px;}
 .popup-bestel .popup-container{height:438px; width: 615px}
-
+.bedankt{padding:20px; margin:180px 0 0 0; text-align:center;}
 .extra-container{height:97px;margin:0; padding: 0; list-style: none; background:url(../img/dots.png) top left repeat-x,url(../img/dots.png) bottom left repeat-x; }
 .extra-container li{float:left; width:25%; height:100%; text-align: center; display: table; background:url(../img/dots-v.png) top right repeat-y }
 .extra-container li.last{background:none;}
@@ -274,7 +280,7 @@ form h2{font-size:1.3em; display: block; text-align: right; width:220px; margin-
 form .inp-wrapper{margin:5px 0;}
 form .inp-wrapper label{width:70px; font-size:1.1em; display: inline-block; text-align: right; margin-right:10px;} 
 form .inp-wrapper input[type="text"]{border:1px #000 solid; padding:5px;}
-form .bezorgen-container{width:300px; height:50px;  margin:15px 0 0 85px;}
+form .bezorgen-container{width:300px; height: 50px;  margin:15px 0 0 85px;}
 form .bezorgen-container label{min-width:100px; float: left; margin:0 0px 5px 0;}
 .btn-bestel{position:absolute; bottom:25px; right:25px;}
 .betalen{margin:30px 0 0 90px;}
@@ -285,13 +291,17 @@ form .bezorgen-container label{min-width:100px; float: left; margin:0 0px 5px 0;
 .disable{opacity:0.5;-webkit-transition: 0.2s ease-out;
 -o-transition: 0.2s ease-out;
 transition: 0.2s ease-out;}
-.disable .disable-wrapper{width: 100%;height: 100%;position:absolute; top: 0;left: 0;}
+.disable .disable-wrapper{width: 100%;height: 100%;position:absolute; top: 0;left: 0; z-index: 2;}
 .enable{opacity:1!important;}
 .enable .disable-wrapper{display:none;}
 #bestel{margin:0; padding:0px; width:100%; float:left;}
+.foto{position:absolute; top:220px; right:150px;}
+.foto img{width:100px; height:auto;}
 
 /*IE FIX*/
 .lt-ie9 .product-item{-pie-background:url(../img/dots-v.png) top right repeat-y, url(../img/dots.png) bottom left repeat-x; behavior: url(css/PIE.htc)}
+.lt-ie9 .disable .disable-wrapper{background:#fff; filter: alpha(opacity=50);}
+
 
 
 
